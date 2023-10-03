@@ -82,3 +82,16 @@
 
 ### SQL內使用者帳號/密碼
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/df293bc7-0254-475f-b3da-ee5e76e021b1)
+
+### SQL 書籍資料內容
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/5eb223fb-6edf-4f5a-ae4d-07173cf7fa73)
+
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/3927aafb-e03b-4320-8ba5-da3a76f819e4)
+
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/035e4492-3ccd-4ed2-8a9e-0b2c974ecfee)
+
+### 修改資料內容
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/bac0d2c2-d92b-408b-8eb1-4fab38316b0a)
+
+### Django 管理面板
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/b451f5ac-4a23-489c-9787-a079d6ac7c8c)
