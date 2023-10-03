@@ -38,3 +38,18 @@
 
 ### BookStore\static\finance_images
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/d669cc8e-4ffd-4ed5-8b17-d404efe0d1a9)
+
+### BookStore\static\images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/488b1f89-fcf2-4495-8fe2-2123d31631e9)
+
+### BookStore\static\language_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/1fb5a6ae-fd58-470c-b20d-fab5d93bfb4e)
+
+### BookStore\static\light_novel_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/f644644d-cabb-4e9c-80c3-5059b1d7a86f)
+
+### BookStore\static\literature_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/8a0cc4d8-bd36-49d8-9c7a-6c0a76040229)
+
+### BookStore\templates
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/f3244185-41d3-424b-b440-f45b6792c85d)
