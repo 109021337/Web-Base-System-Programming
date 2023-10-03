@@ -60,3 +60,10 @@
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/a0dea9da-0a9d-47af-a460-0c83fcf23b90)
 
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/673fd7a9-fe6d-40ae-b55f-25112dbc0141)
+
+### 最新消息購書網頁
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/86263586-9f41-40b8-a426-eb31e015f3bf)
+
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/d414c746-0e97-4c6b-8dd2-27579861deae)
+
+### 
