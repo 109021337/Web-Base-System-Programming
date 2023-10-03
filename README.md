@@ -95,3 +95,19 @@
 
 ### Django 管理面板
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/b451f5ac-4a23-489c-9787-a079d6ac7c8c)
+
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/4a9c2549-160d-47ed-a5c6-55b21cca792e)
+
+### 註冊用戶資料
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/f41c0759-7464-42c5-a1a3-f3c6e3f5d5bb)
+
+### 登入完成，購買書籍
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/f485d06c-3fd8-4ac1-9879-c3ea7fb3b3a9)
+
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/734045ee-8d23-4ded-8c6a-e4993a74ebe8)
+
+### 書籍購買成功
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/2f5da913-0270-430c-b014-23efbde74af4)
+
+### 查看訂單資料
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/1e87729f-abff-45ee-99ee-27c11f6a001f)
