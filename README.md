@@ -14,3 +14,27 @@
 
 ### BookStore\chaapp\migrations
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/9137dadb-1467-491f-8aae-6569544be2d7)
+
+### BookStore\chalogin\
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/c2757382-e5ad-4be2-80e2-e0dadf8a845e)
+
+### BookStore\chalogin\__pycache__
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/ff880cf4-f28a-4d39-93c8-f1b881c47db2)
+
+### BookStore\static
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/491e985a-21f1-4259-a9df-5dbb89a0bbee)
+
+### BookStore\static\books
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/2dd22839-3f4e-4386-9a99-001b867178ec)
+
+### BookStore\static\computer_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/89902710-756f-4f7b-9baa-9b65e5ae5f65)
+
+### BookStore\static\cooking_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/ab64e4dd-f68e-4b1c-9d53-e9b9e33179de)
+
+### BookStore\static\css
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/eb48249e-844a-400e-bda6-ee9cb85c8a05)
+
+### BookStore\static\finance_images
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/d669cc8e-4ffd-4ed5-8b17-d404efe0d1a9)
