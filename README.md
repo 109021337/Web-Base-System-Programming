@@ -54,7 +54,7 @@
 ### BookStore\templates
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/f3244185-41d3-424b-b440-f45b6792c85d)
 
-4.	網頁主頁文學小說列表(現代翻譯文學、奇幻/科幻小說、推理/犯罪小說)
+### 網頁主頁文學小說列表(現代翻譯文學、奇幻/科幻小說、推理/犯罪小說)
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/0f392692-182c-44fb-af45-ea0b9c41ff26)
 
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/a0dea9da-0a9d-47af-a460-0c83fcf23b90)
