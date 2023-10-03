@@ -10,7 +10,7 @@
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/349d47e4-bb32-4c47-a712-e37ff59fd33d)
 
 ### BookStore\chaapp\__pycache__
-![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/08cccb69-209f-433d-a829-4dc6a6643f83)
+![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/50f3bd36-d8af-4950-b4b6-d314efb0733e)
 
 ### BookStore\chaapp\migrations
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/9137dadb-1467-491f-8aae-6569544be2d7)
