@@ -3,6 +3,8 @@
 
 ## Note: Due to the large number and size of static files for the BookStore, they have been separated for storage. When needed, they can be organized based on the data structure.
 
+## The BookStore\static folder should consist of the following subdirectories: books, computer_images, cooking_images, css, finance_images, homepage_images, images, language_images, light_novel_images, and literature_images."
+
 ### Tools and Software in Use
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/37487641-eb78-48a7-bc83-cf91206c53d3)
 
