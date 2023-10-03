@@ -1,5 +1,8 @@
 # Web-Base-System-Programming
 
+
+## Note: Due to the large number and size of static files for the BookStore, they have been separated for storage. When needed, they can be organized based on the data structure.
+
 ### Tools and Software in Use
 ![image](https://github.com/109021337/Web-Base-System-Programming/assets/80087148/37487641-eb78-48a7-bc83-cf91206c53d3)
 
