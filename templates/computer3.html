@@ -1,0 +1,414 @@
+{% extends "homepage_base.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店 首頁</title>{% endblock %}
+
+{% block content %}
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+  <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+  <h3 class="w3-wide"><b>文青書店</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+
+    <!-- 文學系列 -->
+    <a onclick="myAccFunc1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn1">
+      文學小說<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/literature1/" class="w3-bar-item w3-button">現代翻譯文學</a>
+      <a href="/literature2/" class="w3-bar-item w3-button">奇幻／科幻小說</a>
+      <a href="/literature3/" class="w3-bar-item w3-button">推理／犯罪小說</a>
+  </div>
+
+    <!-- 財經系列 -->
+    <a onclick="myAccFunc2()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn2">
+      財經企管<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/finance1/" class="w3-bar-item w3-button">領導／管理</a>
+      <a href="/finance2/" class="w3-bar-item w3-button">傳記／實例</a>
+      <a href="/finance3/" class="w3-bar-item w3-button">管理實務</a>
+  </div>
+
+    <!-- 語言系列 -->
+    <a onclick="myAccFunc3()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn3">
+      語言/字辭典<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/language1/" class="w3-bar-item w3-button">英文學習</a>
+      <a href="/language2/" class="w3-bar-item w3-button">英文檢定</a>
+      <a href="/language3/" class="w3-bar-item w3-button">英文辭典</a>
+  </div>
+
+    <!-- 飲食系列 -->
+    <a onclick="myAccFunc4()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn4">
+      飲食料理<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/cooking1/" class="w3-bar-item w3-button">主題料理</a>
+      <a href="/cooking2/" class="w3-bar-item w3-button">飲食生活</a>
+      <a href="/cooking3/" class="w3-bar-item w3-button">各國料理</a>
+  </div>
+
+  <!-- 輕小說系列 -->
+  <a onclick="myAccFunc5()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn5">
+      日本輕小說<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc5" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/light_novel1/" class="w3-bar-item w3-button">奇幻冒險</a>
+      <a href="/light_nove12/" class="w3-bar-item w3-button">輕鬆日常</a>
+      <a href="/light_nove13/" class="w3-bar-item w3-button">戀愛話題</a>
+      <a href="/light_novel4/" class="w3-bar-item w3-button">青春校園</a>
+      <!-- <a href="#" class="w3-bar-item w3-button">科學幻想</a>
+      <a href="#" class="w3-bar-item w3-button">推理研究</a>
+      <a href="#" class="w3-bar-item w3-button">驚悚恐怖</a> -->
+  </div>
+  
+  <!-- 電腦系列 -->
+  <a onclick="myAccFunc6()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn6">
+    電腦資訊<i class="fa fa-caret-down"></i>
+  </a>
+  <div id="demoAcc6" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <!-- <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a> -->
+      <a href="/computer1/" class="w3-bar-item w3-button">作業系統</a>
+      <a href="/computer2/" class="w3-bar-item w3-button">網頁開發</a>
+      <a href="/computer3/" class="w3-bar-item w3-button">APP開發／程式設計</a>
+      <a href="/computer4/" class="w3-bar-item w3-button">資料庫／大數據</a>
+      <a href="/computer5/" class="w3-bar-item w3-button">遊戲／數位生活</a>
+  </div>
+
+  <!-- <a href="#" class="w3-bar-item w3-button">科學幻想</a>
+  <a href="#" class="w3-bar-item w3-button">推理研究</a>
+  <a href="#" class="w3-bar-item w3-button">驚悚恐怖</a> -->
+  </div>
+  {% if request.user.is_authenticated %}
+    <p style="padding: 16px; padding-bottom: 1px;">使用者:{{request.user}}</p>
+    <a href="/edit/{{request.user}}/load" class="w3-bar-item w3-button w3-padding">修改資料/Edit profile</a>
+    <a href="/logout/" class="w3-bar-item w3-button w3-padding">登出/Logout</a>
+  {% else %}
+    <a href="/register/" class="w3-bar-item w3-button w3-padding">註冊/Register</a>
+    <a href="/login/" class="w3-bar-item w3-button w3-padding">登入/Login</a> 
+  {% endif %}
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+  <p class="w3-left">電腦資訊 APP開發／程式設計</p>
+  <p class="w3-right">
+    <a href="/cart/" target="_blank"><i class="fa fa-shopping-cart w3-margin-right"></i></a>
+    <a href="/cartorder/" target="_blank"><i class="fa fa-search"></i></a>
+  </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <div class="w3-content w3-section" style="max-width:500px">
+      <img class="mySlides" src="{% static '/computer_images/2014713599407.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2014713634566.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2013120504509.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2014713601919.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2013180005114.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2013120600102.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2014713530417.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static '/computer_images/2014713622525.jpg' %}" style="width:100%">
+    </div>
+  <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-hide-small" style="color: black;">Welcome to</h1>
+      <h1 class="w3-hide-large w3-hide-medium" style="color: black;">New arrivals</h1>
+      <h1 class="w3-hide-small" style="color: black;">文青書店</h1>
+      <p><a href="#computer3" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+  </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="computer3">
+  <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+  <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2014713599407.jpg' %}" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789865025533" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>Python初學特訓班<br><b>$379</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2014713634566.jpg' %}" style="width:100%">
+          <!-- <span class="w3-tag w3-display-topleft">New</span> -->
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9786263241114" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>系統程式設計<br><b>$748</b></p>
+      </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+      <div class="w3-container">
+      <div class="w3-display-container">
+          <img src="{% static '/computer_images/2013120504509.jpg' %}" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9786263241114" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>領域驅動設計<br><b>$578</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2014713601919.jpg' %}" style="width:100%">
+          <!-- <span class="w3-tag w3-display-topleft">New</span> -->
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789865025977" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>Python自動化的樂趣<br><b>$537</b></p>
+      </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2013180005114.jpg' %}" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789860776836" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>演算法戰鬥營<br><b>$748</b></p>
+      </div>
+      <div class="w3-container">
+      <div class="w3-display-container">
+          <img src="{% static '/computer_images/2013120600102.jpg' %}" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789860776294" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>Python金融市場賺大錢聖經<br><b class="w3-text-red">$663</b></p>
+      </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2014713530417.jpg' %}" style="width:100%">
+          <!-- <span class="w3-tag w3-display-topleft">New</span> -->
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789864764747" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>MTA<br><b>$213</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static '/computer_images/2014713622525.jpg' %}" style="width:100%">
+          <!-- <span class="w3-tag w3-display-topleft">New</span> -->
+          <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black"><a href="/book/9789865028855" target="_blank">Buy now </a><i class="fa fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <p>系統設計面試指南<br><b>$458</b></p>
+      </div>
+  </div>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>購買注意事項</h1>
+    <ul>
+      <li><p>本賣場都是向出版社進貨的全新正版書籍。</p></li>
+      <li><p>賣場大部分的書都有現貨(架上庫存非店內庫存)有現貨的書都是會趕2個工作天內出貨，如遇剛好缺書的狀況會立刻幫<br>您向出版社進貨 ，大約3-5個工作天可以補進出貨。(開學,連假期間,物流量大可能有所延遲.)</p></li>
+      <li><p>沒有接受議價，賣場採取薄利多銷，商品都已是最低折扣過的價格(團購多量除外)。</p></li>
+      <li><p>退換商品部份需在7日內才受理(有膠膜之商品拆封後,數位商品不退)，非賣場現貨專程客製化POD的調書訂購不可退。</p></li>
+    </ul>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+        <div class="w3-col s4">
+        <h2>文青書店 簡介</h2>
+        <p>創立於2022年6月14日</p>
+        <p style="text-align: justify; font-size: 15px;">商品介紹<br><br>
+          文青書店有非常多類型的書<br><br>
+          文學、教育／親子教養、童書、財經企管、心理勵志、宗教命理、自然科普、生活風格、健康生活、人文歷史、社會、語言辭典、電腦資訊、藝術設計、旅遊、輕小說、漫畫、考試政府、參考書等類別</p>
+        <!-- <form action="/action_page.php" target="_blank">
+            <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+            <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form> -->
+        </div>
+
+        <div class="w3-col s4">
+          <h4>About</h4>
+          <p><a href="/news/" target="_blank">最新消息</a></p>
+          <p><a href="/aboutus/" target="_blank">關於我們</a></p>
+          <p><a href="/service/" target="_blank">提供意見</a></p>
+          <p><a href="/question/" target="_blank">相關問題</a></p>
+          <!-- <p><a href="#">Shipment</a></p>
+          <p><a href="#">Payment</a></p>
+          <p><a href="#">Gift card</a></p>
+          <p><a href="#">Return</a></p>
+          <p><a href="#">Help</a></p> -->
+          </div>
+
+          <div class="w3-col s4 w3-justify">
+            <h4>Store</h4>
+            <p><i class="fa fa-fw fa-map-marker"></i> 文青書局網絡股份有限公司</p>
+            <p><i class="fa fa-fw fa-phone"></i> 09878787487</p>
+            <p><i class="fa fa-fw fa-envelope"></i> notexist@123.com.tw</p>
+            <h4>We accept</h4>
+            <p><a href="https://www.americanexpress.com/zh-tw/account/login" target="_blank"><i class="fa fa-fw fa-cc-amex"></i></a> Amex</p>
+            <p><a href="https://usa.visa.com/en_us/account/login?returnurl=%2Fen_us%2Faccount%2Fprofile" target="_blank"><i class="fa fa-fw fa-credit-card"></i></a> Credit Card</p>
+            <br>
+            <a href="https://zh-tw.facebook.com/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity w3-large"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram w3-hover-opacity w3-large"></i></a>
+            <a href="https://www.snapchat.com/" target="_blank"><i class="fa fa-snapchat w3-hover-opacity w3-large"></i></a>
+            <a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i></a>
+            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiemgtSGFudCJ9%22%7D" target="_blank"><i class="fa fa-twitter w3-hover-opacity w3-large"></i></a>
+            <a href="https://tw.linkedin.com/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity w3-large"></i></a>
+            </div>
+        </div>
+        </footer>
+    
+        <div class="w3-black w3-center w3-padding-24" style="font-size: 25px;">銘謝惠顧 文青書店</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+  <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+  </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc1() {
+  var x = document.getElementById("demoAcc1");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc2() {
+  var x = document.getElementById("demoAcc2");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc3() {
+  var x = document.getElementById("demoAcc3");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc4() {
+  var x = document.getElementById("demoAcc4");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc5() {
+  var x = document.getElementById("demoAcc5");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc6() {
+  var x = document.getElementById("demoAcc6");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+// document.getElementById("myBtn1").click();
+// document.getElementById("myBtn2").click();
+// document.getElementById("myBtn3").click();
+// document.getElementById("myBtn4").click();
+// document.getElementById("myBtn5").click();
+document.getElementById("myBtn6").click();
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>
+{% endblock %}

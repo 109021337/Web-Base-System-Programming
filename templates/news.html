@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block title %}<title>文青書店 最新消息</title>{% endblock %}
+
+{% block content %}
+<table style="border: none; border-collapse: collapse; width: 1200px; color: #ffffff; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td colspan="4"><a style="font-weight:bold; font-size: 40px; color: #f8127d;">暢銷商品</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td>
+    </tr>
+    <tr>
+        <td style="width: 50px;"><input type="image" src="{% static '/images/arrow2.png'%}" style="width: 50; height: 75px;" onclick="last_page()"></td>
+        <td style="width: 1140px;">
+            <table id="books1" style="border-collapse: collapse; border: black; display: block;">
+                <tr>
+                {% for book in popular %}
+                    <td align="center"><input type="image" src="/static/books/{{ book.Cover }}" style="width: 285px; height: 285px;" onclick="location.href='/book/{{book.ISBN}}';"></td>
+                {% endfor %}
+                </tr>
+                <tr>
+                {% for book in popular %}
+                    <td align="center" style="width: 285px;"><h3 style="color: black; font-weight:bold; color: rgb(129, 39, 12);">{{book.Name}}</h3></td>
+                {% endfor %}
+                </tr>
+            </table>
+            <table id="books2" style="border-collapse: collapse; border: black; display: none;">
+                <tr>
+                {% for book in popular2 %}
+                    <td align="center"><input type="image" src="/static/books/{{ book.Cover }}" style="width: 285px; height: 285px;" onclick="location.href='/book/{{book.ISBN}}';"></td>
+                {% endfor %}
+                </tr>
+                <tr>
+                {% for book in popular2 %}
+                    <td align="center" style="width: 285px;"><h3 style="color: black; font-weight:bold; color: rgb(129, 39, 12);">{{book.Name}}</h3></td>
+                {% endfor %}
+                </tr>
+            </table>
+            <table id="books3" style="border-collapse: collapse; border: black; display: none;">
+                <tr>
+                {% for book in popular3 %}
+                    <td align="center"><input type="image" src="/static/books/{{ book.Cover }}" style="width: 285px; height: 285px;" onclick="location.href='/book/{{book.ISBN}}';"></td>
+                {% endfor %}
+                </tr>
+                <tr>
+                {% for book in popular3 %}
+                    <td align="center" style="width: 285px;"><h3 style="color: black; font-weight:bold; color: rgb(129, 39, 12);">{{book.Name}}</h3></td>
+                {% endfor %}
+                </tr>
+            </table>
+        </td>
+        <td style="width: 50px;"><input type="image" src="{% static '/images/arrow3.png'%}" style="width: 55px; height: 75px;" onclick="next_page()"></td>
+    </tr>
+    <tr>
+        <td colspan="4" align="center"><input type="image" id="oval1" src="{% static '/images/oval.png'%}" onclick="to_page(1)" style="opacity: 0.8; width: 40px; height: 10px;"><input type="image" id="oval2" onclick="to_page(2)" src="{% static '/images/oval.png'%}" style="opacity: 0.3; width: 40px; height: 10px;"><input type="image" id="oval3" onclick="to_page(3)" src="{% static '/images/oval.png'%}" style="opacity: 0.3; width: 40px; height: 10px;"></td>
+    </tr>
+    <tr>
+        <td colspan="4"><br><br><img src="{% static '/images/line.png'%}" style="width: 625px; height: 40px;"><img src="{% static '/images/line.png'%}" style="width: 625px; height: 40px;"></td>
+    </tr>
+</table>
+
+<table style="border: none; border-collapse: collapse; width: 1250px; color: #ffffff; margin-left: auto; margin-right: auto; background-color: rgb(255, 255, 255);">
+    <tr><td><br></td></tr>
+    <tr style="background-color: #ffd024; text-align: center;">
+        <td><a style="color: #ffffff; font-size: 25px; font-weight:bold;"><img src="{% static '/images/news.png' %}" style="width: 30px; height: 30px;">大優惠!!</a></td>
+        <td><a style="font-weight:bold; font-size: 25px;">即日起，只要消費滿1000元即可享有9折優惠，期間限定要買要快!</a></td>
+    </tr>
+</table>
+<table style="width: 1250px; color: #ffffff; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td><a href="https://www.fuboncharity.org.tw/chinese/"><img src="{% static '/images/banner1.png' %}" alt="charity"></a></td>
+    </tr>
+</table>
+
+<table style="border: none; border-collapse: collapse; width: 1200px; color: #ffffff; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td><a style="font-weight:bold; font-size: 40px; color: #f8127d;">可能感興趣的書籍</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td>
+    </tr>
+    <tr>
+        <table style="border-collapse: collapse; border: black; width: 1200px;; margin-left: auto; margin-right: auto;">
+            <tr>
+            {% for book in recommend %}
+                <td align="center"><input type="image" src="/static/books/{{ book.Cover }}" style="width: 250px; height: 250px;" onclick="location.href='/book/{{book.ISBN}}';"></td>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for book in recommend %}
+                <td align="center" style="width: 250px;"><a href="/book/{{book.ISBN}}" style="color: black; text-decoration:none; font-size: 20px; font-weight:bold; color: rgb(129, 39, 12);">{{book.Name}}</a></td>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for book in recommend2 %}
+                <td align="center"><input type="image" src="/static/books/{{ book.Cover }}" style="width: 250px; height: 250px;" onclick="location.href='/book/{{book.ISBN}}';"></td>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for book in recommend2 %}
+                <td align="center" style="width: 250px;"><a href="/book/{{book.ISBN}}" style="color: black; text-decoration:none; font-size: 20px; font-weight:bold; color: rgb(129, 39, 12);">{{book.Name}}</a></td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <td colspan="4" align="right" style="height: 100px; vertical-align: bottom;"><a href="/index/" style="color: green; font-size: 20px;">查看更多</a></td>
+            </tr>
+        </table>
+    </tr>
+</table>
+
+<hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td>
+
+<table style="width: 1250px; color: #ffffff; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td><a href="https://www.health.taichung.gov.tw/"><img src="{% static '/images/banner4.png' %}" alt="health" style="width: 625px; height: 310px"></a></td>
+        <td><a href="https://www.health.taichung.gov.tw/"><img src="{% static '/images/banner5.jpg' %}" alt="health" style="width: 625px; height: 310px"></a></td>
+    </tr>
+</table>
+
+<script>
+    var page = 1;
+    function next_page(){
+        page += 1;
+        if(page > 3)
+        {
+            page = 1;
+        }
+        banner_switch();
+    }
+    function last_page(){
+        page -= 1;
+        if(page < 1)
+        {
+            page = 3;
+        }
+        banner_switch();
+    }
+    function to_page(target)
+    {
+        page = target;
+        banner_switch();
+    }
+
+    function banner_switch() {
+        var books1 = document.getElementById("books1").style;
+        var books2 = document.getElementById("books2").style;
+        var books3 = document.getElementById("books3").style;
+        var oval1 = document.getElementById("oval1").style;
+        var oval2 = document.getElementById("oval2").style;
+        var oval3 = document.getElementById("oval3").style;
+
+        if(page == 1)
+        {
+            books1.display = 'block';
+            books2.display = 'none';
+            books3.display = 'none';
+            oval1.opacity = 0.8;
+            oval2.opacity = 0.3;
+            oval3.opacity = 0.3;
+        }
+        else if(page == 2)
+        {
+            books2.display = 'block';
+            books1.display = 'none';
+            books3.display = 'none';
+            oval1.opacity = 0.3;
+            oval2.opacity = 0.8;
+            oval3.opacity = 0.3;
+        }
+        else
+        {
+            books2.display = 'none';
+            books1.display = 'none';
+            books3.display = 'block';
+            oval1.opacity = 0.3;
+            oval2.opacity = 0.3;
+            oval3.opacity = 0.8;
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %} {% endblock %}
+        <meta charset="utf-8">
+        {% block script %}
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+        </script>
+        {% endblock %}
+        <style>
+            .slideshow {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+                height: 270px;
+                width: 1250px;
+            }
+            .slideshow img {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+            .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            .dropdown {
+            float: left;
+            overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: #ffffff;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+            }
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 96px;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+
+            .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+
+            .dropdown-content a:hover {
+            background-color: #868686;
+            }
+
+            .dropdown:hover .dropdown-content {
+            display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin-left: auto; margin-right: auto; width: 1250px; display: flex; justify-content: center;">
+            <div class="navbar" style="width: 380px; margin-left: auto;  overflow: hidden; background-color: #333; display: inline-block">
+                <a href="/index/">首頁</a>
+                <a href="/news/">最新消息</a>
+            </div>
+            <div class="navbar" style="width: 870px; overflow: hidden; background-color: #333; align-content: flex-end; display: inline-block">
+            
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn">
+                    {% if request.user.is_authenticated %}
+                        {{request.user}}
+                    {% else %}
+                        尚未登入
+                    {% endif %}
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" style="right: 100;">
+                {% if request.user.is_authenticated %}
+                    <a href="/edit/{{request.user}}/load">修改資料</a>
+                    <a href="/logout/">登出</a>
+                {% else %}
+                    <a href="/register/">註冊</a>
+                    <a href="/login/">登入</a>
+                {% endif %}
+                </div>
+            </div> 
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn">關於我們 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/aboutus/">書店歷史</a>
+                    <a href="javascript:founder();">創始人</a>
+                    <a href="javascript:people();">相關人士</a>
+            </div>
+            </div>
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn">線上服務 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                {% if request.user.is_staff %}
+                    <a href="/admin/">系統後台</a>
+                {% else %}
+                    <a href="/service/">客服中心</a>
+                {% endif %}
+                <a href="/question/">相關提問</a>
+                <a href="javascript:showalert();">隱私條款</a>
+                </div>
+            </div> 
+            <a href="javascript:checkout();" style="float:right;">結帳</a>
+            </div>
+              
+            <div class="w3-clear"></div>
+        </div>
+        
+        <table id="pic4" style="width: 1250px; margin-left: auto; margin-right: auto; border: 0px; display: none;" cellspacing="0" cellpadding="0"><tr><td><img src="{% static '/images/pic4.png' %}"></td></tr></table>
+        <table id="pic5" style="width: 1250px; margin-left: auto; margin-right: auto; border: 0px; display: none;" cellspacing="0" cellpadding="0"><tr><td><img src="{% static '/images/pic5.png' %}"></td></tr></table>
+        <table id="pic6" style="width: 1250px; margin-left: auto; margin-right: auto; border: 0px; display: none;" cellspacing="0" cellpadding="0"><tr><td><img src="{% static '/images/pic6.png' %}"></td></tr></table>
+        {% block content %} {% endblock %}
+
+        <table style="background-color: #312f28; width: 1250px; color: #ffffff; margin-left: auto; margin-right: auto;">
+            <tr style="height: 30px;"></tr>
+            <tr style="text-align: center; height: 70px;">
+                <td style="font-size: 30px; font-weight:bold;">關於我們</td>
+                <td style="font-size: 30px; font-weight:bold;">聯絡方式</td>
+                <td style="font-size: 30px; font-weight:bold;">線上服務</td>
+                <td style="font-size: 30px; font-weight:bold;">關注文青</td>
+            </tr>
+            <tr style="text-align: center; height: 35px;">
+                <td style="font-size: 16px;"><a href="/aboutus/" style="color: rgb(255, 255, 255); text-decoration:none;">書店歷史</a></td>
+                <td style="font-size: 16px;">電話:09878787487</td>
+                <td style="font-size: 16px;"><a href="/service/" style="color: rgb(255, 255, 255); text-decoration:none;">客服中心</a></td>
+                <td style="font-size: 16px;"><img src="{% static '/images/fb_icon_325x325.png' %}" style="width: 15px; height:15px"><a href="https://www.facebook.com/" style="color: rgb(255, 255, 255); text-decoration:none;">臉書</a></td>
+            </tr>
+            <tr style="text-align: center; height: 35px;">
+                <td style="font-size: 16px;"><input type="button" onclick="founder()" value="創始人故事" style="border-color: transparent; background-color: #312f28; color: #ffffff; font-size: 16px; cursor:pointer;"></td>
+                <td style="font-size: 16px;">傳真:02-8888888</td>
+                <td style="font-size: 16px;"><a href="/question/" style="color: rgb(255, 255, 255); text-decoration:none;">相關問題</a></td>
+                <td style="font-size: 16px;"><img src="{% static '/images/instagram.png' %}" style="width: 15px; height:15px"><a href="https://www.instagram.com/" style="color: rgb(255, 255, 255); text-decoration:none;">Instagram</a></td>
+            </tr>
+            <tr style="text-align: center; height: 35px;">
+                <td style="font-size: 16px;"><input type="button" onclick="people()" value="相關人士" style="border-color: transparent; background-color: #312f28; color: #ffffff; font-size: 16px; cursor:pointer;"></td>
+                <td style="font-size: 16px; width: 250px;">信箱：notexist@123.com.tw</td>
+                <td style="font-size: 16px;"><input type="button" onclick="showalert()" value="服務條款" style="border-color: transparent; background-color: #312f28; color: #ffffff; font-size: 16px; cursor:pointer;"></td>
+                <td style="font-size: 16px;"><img src="{% static '/images/3721679-youtube_108064.png' %}" style="width: 15px; height:15px"><a href="https://www.youtube.com/" style="color: rgb(255, 255, 255); text-decoration:none;">Youtube</a></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center; font-size: 20px; height: 60px;"><img src="{% static '/images/Location.png' %}" style="width: 10px; height: 16;">
+                    實體店面 : 台中市霧峰區柳豐路500號
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center; font-size: 20px;">
+                    Copyright©2022 文青書局網絡股份有限公司
+                </td>
+            </tr>
+            <tr style="height: 100px;"></tr>
+        </table>
+
+        <script>
+            var x = Math.random();
+            function pic()
+            {
+                var pic4 = document.getElementById('pic4').style;
+                var pic5 = document.getElementById('pic5').style;
+                var pic6 = document.getElementById('pic6').style;
+                if(x > 0.7)
+                {
+                    pic4.display = "block";
+                }
+                else if(x < 0.3)
+                {
+                    pic5.display = "block";
+                }
+                else
+                {
+                    pic6.display = "block";
+                }
+            }
+            window.onload = pic;
+
+            function founder() {
+                window.alert("他跑路了");
+            }
+            function people() {
+                window.alert("他們去討債了");
+            }
+            function showalert() {
+                window.alert("沒人會看這種東西的");
+            }
+            function logout() {
+                window.alert("成功登出");
+                document.location.href="/logout/";
+            }
+            function checkout() {
+                "{% if request.user.is_authenticated %}"
+                    document.location.href="/cart/";
+                "{% else %}"
+                    window.alert("您尚未登入");
+                "{% endif %}"
+            }
+            
+            function show(){
+                let confirmAction = confirm("是否將此商品加入至購物車內?");
+                if (confirmAction) {
+                    document.location.href="/addtocart/add/{{unit.id}}";
+                }
+            };
+
+            $('.slideshow').each(function(){
+                
+                let slideImgs = $(this).find('img'),
+                    slideImgsCount = slideImgs.length,
+                    currentIndex = 0;
+                
+                slideImgs.eq(currentIndex).fadeIn();
+                
+                setInterval(showNextSlide, 5000);
+                
+                function showNextSlide(){
+                    let nextIndex = (currentIndex + 1) % slideImgsCount;
+                    console.log(nextIndex)
+                    slideImgs.eq(currentIndex).fadeOut();
+                    slideImgs.eq(nextIndex).fadeIn();
+                    currentIndex = nextIndex;
+                }
+            })
+        </script>
+    </body>
+</html>

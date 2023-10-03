@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店 提供意見</title>{% endblock %}
+
+{% block content %}
+<table style="width: 1200px; margin-left: auto; margin-right: auto;" align="center">
+<tr><td colspan="2"><a style="font-weight:bold; font-size: 50px; color: #f8127d;">提供意見</a>
+</table>
+
+<div class="container" style="margin-left: auto; margin-right: auto; width: 1200px;">
+<form action="action_page.php">
+
+    <label for="fname">姓名:</label>
+    <input type="text" id="fname" name="firstname" placeholder="名字">
+
+    <label for="fname">電話:</label>
+    <input type="text" id="fphone" name="phone" placeholder="電話號碼">
+
+    <label for="subject">內容</label>
+    <textarea id="subject" name="subject" placeholder="內容..." style="height:200px"></textarea>
+
+    <input type="button" value="送出" onclick="submitA()" style="background-color: #ff9900; color: rgb(255, 255, 255); padding: 8px 16px; font-size: 20px; border: none; border-radius: 4px; cursor: pointer;">
+
+</form>
+</div><br>
+
+<script>
+    function submitA() {
+        var name = document.getElementById("fname").value;
+        var phone = document.getElementById("fphone").value;
+        var subject = document.getElementById("subject").value;
+
+        if(name.length < 1)
+        {
+            window.alert("您忘了輸入名字喔");
+        }
+        else if(phone.length < 10)
+        {
+            window.alert("請輸入正確電話號碼喔");
+        }
+        else if(subject.length < 1)
+        {
+            window.alert("我們不接受空白意見喔!");
+        }
+        else
+        {
+            window.alert("您的需求我們已經收到了!\n非常感謝您!!");
+            document.location.href="/news/";
+        }
+    }
+</script>
+{% endblock %}

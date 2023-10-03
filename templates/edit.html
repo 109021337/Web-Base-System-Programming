@@ -1,0 +1,103 @@
+{% extends "base_lite.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店</title>{% endblock %}
+
+{% block content %}
+
+<table style="width: 1000px; margin-left: auto; margin-right: auto;">
+    <tr><td colspan="2"><a style="font-weight:bold; font-size: 50px; color: #f8127d;">修改用戶資料</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td></tr>
+    <tr><td>
+        <img src="{% static '/images/password_info.jpg' %}" style="-webkit-user-drag: none; width: 600px; height: 360px;"/>
+    </td><td>
+    <form action="/edit/{{unit.username}}/save" id="myForm" method="POST" name="form1">
+        {% csrf_token %}
+        <table border="0" cellpadding="6" cellspacing="1" style="border-collapse: collapse; height: 200px;">
+        <tr>
+            <td colspan="2" valign="baseline"><h2 style="color: #ff9408;">修改資料</h2></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">帳號</th>
+            <td align="right" valign="baseline" style="height: 30px; text-align: left;">{{unit.username}}</td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">姓氏</th>
+            <td valign="baseline"><input type="text" name="FName" id="FName"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">名字</th>
+            <td valign="baseline"><input type="text" name="LName" id="LName"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">信箱</th>
+            <td valign="baseline"><input type="text" name="email" id="email"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">密碼</th>
+            <td valign="baseline"><input type="text" name="password" id="password"/></td>
+        </tr>
+        <tr>
+            <th colspan="2" align="center" valign="baseline">
+                <input type="button" value="修改" onclick="submitdata()" style="border-radius: 4px; width: 240px; height: 50px; font-size: 30px; border: none; text-align: center; color: white; background-color: #4CAF50; cursor:pointer;">
+            </th>
+        </tr>
+        </table>
+    </form>
+    </td></tr>
+</table>
+<br>
+
+<script>
+    function data() {
+        if("{{urlname}}" != "{{request.user}}")
+        {
+            document.location.href="/login/";
+        }
+            
+        var firstname = "{{unit.first_name}}";
+        var lastname = "{{unit.last_name}}";
+        var semail = "{{unit.email}}";
+
+        firstname.replace("/","");
+        lastname.replace("/","");
+        semail.replace("/","");
+
+        var tmp1 = document.getElementById('FName');
+        tmp1.value = firstname;
+        var tmp2 = document.getElementById('LName');
+        tmp2.value = lastname;
+        var tmp3 = document.getElementById('email');
+        tmp3.value = semail;
+    }
+
+    function submitdata() {
+        var fname = document.getElementById('FName').value;
+        var lname = document.getElementById('LName').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        if(fname.length < 1)
+        {
+            window.alert("您忘了輸入姓氏喔");
+        }
+        else if(lname.length < 1)
+        {
+            window.alert("您忘了輸入名字喔");
+        }
+        else if(email.length < 1)
+        {
+            window.alert("請輸入信箱喔");
+        }
+        else if(password.length < 1)
+        {
+            window.alert("請輸入密碼!");
+        }
+        else
+        {
+            window.alert("資料成功修改!! 請再次登入!\n帳號:"+"{{unit.username}}"+"\n密碼:"+password);
+            document.getElementById("myForm").submit();
+        }
+    }
+    window.onload=data();
+</script>
+{% endblock %}

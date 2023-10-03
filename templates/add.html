@@ -1,0 +1,51 @@
+{% extends "base_lite.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店 註冊用戶</title>{% endblock %}
+
+{% block content %}
+<table style="width: 1000px; margin-left: auto; margin-right: auto;" align="center">
+    <tr><td colspan="2"><a style="font-weight:bold; font-size: 50px; color: #f8127d;">註冊用戶</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td></tr>
+    <tr><td>
+        <img src="{% static '/images/password_info.jpg' %}" style="-webkit-user-drag: none; width: 600px; height: 360px;"/>
+    </td><td>
+    <form action="." method="POST" name="form1">
+        {% csrf_token %}
+        <table border="2" cellpadding="4" cellspacing="1" style="border-collapse: collapse; height: 200px;">
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">姓氏</th>
+            <td valign="baseline"><input type="text" name="FName" id="FName"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">名字</th>
+            <td valign="baseline"><input type="text" name="LName" id="LName"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">帳號</th>
+            <td valign="baseline"><input type="text" name="username" id="username"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">密碼</th>
+            <td valign="baseline"><input type="password" name="password" id="password"/></td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">電子信箱</th>
+            <td valign="baseline"><input type="text" name="email" id="email"/></td>
+        </tr>
+        <tr>
+            <th colspan="2" align="center" valign="baseline">
+            <input type="submit" name="button" id="button" value="註冊" style="border-radius: 4px; width: 300px; height: 60px; font-size: 30px; border: none; text-align: center; color: white; background-color: #4CAF50; cursor:pointer;">
+            {% if messages %}
+                <h1 class="messages" style="color: rgb(255, 31, 31); margin-left: auto; margin-right: auto; font-size: 30px; font-weight:bold;">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </h1>
+            {% endif %}
+            </th>
+            </tr>
+        </table>
+    </form>
+    </td></tr>
+</table>
+{% endblock %}

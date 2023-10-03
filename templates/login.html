@@ -1,0 +1,52 @@
+{% extends "base_lite.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店 使用者登入</title>{% endblock %}
+
+{% block content %}
+<table style="width: 1000px; margin-left: auto; margin-right: auto;" align="center">
+    <tr><td colspan="2"><a style="font-weight:bold; font-size: 50px; color: #f8127d;">使用者登入</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td></tr>
+    <tr><td>
+        <img src="{% static '/images/password_info.jpg' %}" style="-webkit-user-drag: none; width: 600px; height: 360px;"/>
+    </td><td>
+    <form action="." method="POST" name="form1">
+        {% csrf_token %}
+        <table border="2" cellpadding="4" cellspacing="1" style="border-collapse: collapse; height: 200px;">
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">帳號</th>
+            <td valign="baseline">{{postform.username}}</td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline" style="height: 30px;">密碼</th>
+            <td valign="baseline">{{postform.pd}}</td>
+        </tr>
+        <tr>
+            <th align="right" valign="baseline">驗證碼</th>
+            <td valign="baseline">{{postform.captcha}}</td>
+        </tr>
+        <tr>
+            <th colspan="2" align="center" valign="baseline">
+            <input type="submit" name="button" id="button" value="登入" style="border-radius: 4px; width: 300px; height: 60px; font-size: 30px; border: none; text-align: center; color: white; background-color: #4CAF50; cursor:pointer;">
+            <p>沒有帳號?<a href="/register/" style="color: green;">註冊</a></p>
+            {% if messages %}
+                <h1 class="messages" style="color: rgb(255, 31, 31); margin-left: auto; margin-right: auto; font-size: 30px; font-weight:bold;">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </h1>
+            {% endif %}
+            </th>
+            </tr>
+        </table>
+    </form>
+    </td></tr>
+</table>
+<script>
+    function check() {
+        "{% if request.user.is_authenticated %}"
+            document.location.href="/logout/";
+        "{% endif %}"
+    }
+    window.onload=check();
+</script>
+{% endblock %}

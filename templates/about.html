@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>文青書店 關於我們</title>{% endblock %}
+
+{% block content %}  
+<table style="width: 1000px; margin-left: auto; margin-right: auto;" align="center">
+    <tr><td colspan="2"><a style="font-weight:bold; font-size: 50px; color: #f8127d;">關於我們</a><hr style="width: 1250px; margin-left: auto; margin-right: auto;"></td></tr>
+</table>
+
+<div style="width: 1250px; margin-left: auto; margin-right: auto;">
+    <div id="ads">
+    <img src="{% static '/images/cover.jpg' %}" style="-webkit-user-drag: none;"/>
+    </div>
+    <h3>經營理念</h3>
+    <p>2022年，我們因為命運而聚在一起，還開了網路書店</p>
+    <hr>
+    <h3>製作背景</h3>
+    <p>我們經歷了疫情、烏日戰爭、網頁系統開發期末專題報告</p>
+    <p>跨越了重重阻礙，我們還是走到了這裡</p>
+    <hr>
+    <h3>商品介紹</h3>
+    <p>文青書店有非常多類型的書</p>
+    <p>
+        文學、教育／親子教養、童書、財經企管、心理勵志、宗教命理、自然科普、生活風格、健康生活、人文歷史、社會、語言辭典、電腦資訊、藝術設計、旅遊、輕小說、漫畫、考試政府、參考書等類別
+    </p>
+
+
+    
+</div>
+
+<style>
+    #ads {
+    float: left; /* 如果設定廣告放在左邊，請修改為 float: left; */
+    margin: 0 20px 20px 0;
+    width: 610px; /* 配合廣告尺寸 */
+    clear: both;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head><title>文青書店</title></head>
+  <body onload="show()">
+    <script>
+      function show()
+      {
+        let confirmAction = confirm("親愛的 {{customname1}} (先生 / 小姐)，您已經成功的完成訂購程序，我們將儘快把您選購的商品郵寄給您！ 再次感謝您支持。\n是否前往觀看詳細內容?");
+        if (confirmAction) {
+          document.location.href="/cartordercheck/?orderid={{orderid}}&customemail={{mailto}}";
+        }
+        else
+        {
+          document.location.href="/index/";
+        }
+      }
+    </script>
+  </body>
+</html>
